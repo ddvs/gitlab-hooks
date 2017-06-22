@@ -25,10 +25,10 @@ module.exports = {
       'default': 'ddv gitlab hooks'
     },
     listenType: {
-      'type': 'string',
+      'type': 'list',
       'required': true,
       'message': 'hooks listen type',
-      'default': 'tcp'
+      'choices': ['tcp', 'ssl']
     },
     listenDomain: {
       'type': 'string',
@@ -46,12 +46,12 @@ module.exports = {
       'type': 'string',
       'required': true,
       'message': 'apache2 conf ',
-      'default': `${siteRootPath}{{#inPlace}}{{else}}/{{destDirName}}{{/inPlace}}/repository`
+      'default': `${siteRootPath}/repository`
     },
     confFile: {
       'type': 'string',
       'message': 'apache2 conf file path',
-      'default': `${siteRootPath}{{#inPlace}}{{else}}/{{destDirName}}{{/inPlace}}/laravel.php.conf`
+      'default': `${siteRootPath}/laravel.php.conf`
     },
     domain: {
       'type': 'string',
