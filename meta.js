@@ -1,4 +1,6 @@
 const path = require('path')
+// 尝试获取配置文件地址
+const siteRootPath = path.resolve('.', './')
 module.exports = {
   helpers: {
     raw: function (options) {
@@ -44,12 +46,12 @@ module.exports = {
       'type': 'string',
       'required': true,
       'message': 'apache2 conf ',
-      'default': path.join(__dirname, './repository')
+      'default': path.join(siteRootPath, './repository')
     },
     confFile: {
       'type': 'string',
       'message': 'apache2 conf file path',
-      'default': path.join(__dirname, './laravel.php.conf')
+      'default': path.join(siteRootPath, './laravel.php.conf')
     },
     domain: {
       'type': 'string',
