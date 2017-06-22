@@ -46,12 +46,12 @@ module.exports = {
       'type': 'string',
       'required': true,
       'message': 'apache2 conf ',
-      'default': path.join(siteRootPath, './repository')
+      'default': `${siteRootPath}{{^inPlace}}/{{destDirName}}{{/inPlace}}/repository`
     },
     confFile: {
       'type': 'string',
       'message': 'apache2 conf file path',
-      'default': path.join(siteRootPath, './laravel.php.conf')
+      'default': `${siteRootPath}{{^inPlace}}/{{destDirName}}{{/inPlace}}/laravel.php.conf`
     },
     domain: {
       'type': 'string',
